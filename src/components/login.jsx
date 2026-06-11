@@ -3,6 +3,7 @@ import "../index.css";
 import { useNavigate } from "react-router-dom";
 import Image from "../assets/image.png";
 import Logo from "../assets/logo.png";
+import { BASE_URL } from "../components/Common";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -46,7 +47,7 @@ localStorage.removeItem("lastBillAmt");
       }).toString();
 
       // Vite proxy: /Login/LoginSuccess → http://localhost:64215/api/loginApp/LoginSuccess
-      const res = await fetch(`/Login/webLoginSuccess?${qs}`, {
+      const res = await fetch(`${BASE_URL}/api/loginApp/webLoginSuccess?${qs}`, {
         method: "POST",
         // No Content-Type, no body — backend reads primitives from query string
       });

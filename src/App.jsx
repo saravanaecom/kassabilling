@@ -8,9 +8,9 @@ import ItemMaster from "./components/Itemmaster";
 // MASTER
 import BrandMaster from "./Master/Brandmaster";
 import CategoryMaster from "./Master/Categorymaster";
-import DepartmentMaster from "./Master/DepartmentMaster";
-import SupplierMaster from "./Master/SupplierMaster";
-import UomMaster from "./Master/UomMaster";
+import DepartmentMaster from "./Master/Departmentmaster";
+import SupplierMaster from "./Master/Suppliermaster";
+import UomMaster from "./Master/Uommaster";
 import LocationMaster from "./Master/LocationMaster";
 import CompanyMaster from "./Master/CompanyMaster";
 import CashierMaster from "./Master/CashierMaster";

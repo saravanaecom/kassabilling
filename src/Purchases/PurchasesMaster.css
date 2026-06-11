@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* ═══════════════════════════════════════════════════════════════════════════
    PurchasesMaster.css  —  Restyled to match SaleBill.jsx design system
    Color system sourced from SaleBill.css exactly:
@@ -17,9 +19,7 @@
      Red            : #dc2626 / #dc3545
    ═══════════════════════════════════════════════════════════════════════════ */
 
-   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-   /* ── CSS Variables — matching SaleBill exactly ───────────────────────────── */
+/* ── CSS Variables — matching SaleBill exactly ───────────────────────────── */
    :root {
      --pm-blue:       #1f65de;
      --pm-blue-dark:  #1750b0;

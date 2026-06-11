@@ -3,6 +3,7 @@
 //  Shared utilities, API helpers, hooks, and UI components
 //  used across all Cashier/Master pages.
 // ─────────────────────────────────────────────────────────────────────────────
+/* eslint-disable react-refresh/only-export-components */
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
@@ -10,7 +11,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 export const getStr   = (k) => localStorage.getItem(k) || "";
 export const getLocal = (k) => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
 
-export const BASE_URL = "http://localhost:64215";
+export const BASE_URL = "https://billing.kassapos.co.in";
 // Cashier API Links
 export const CashierSelect = "/api/CashierApp/SelectCashier";
 export const CashierInsert = "/api/CashierApp/InsertCashier";
@@ -72,6 +73,11 @@ export const SupplierMasterInsert = "/api/SupplierApp/InsertSupplier";
 export const SupplierMasterDelete = "/api/SupplierApp/DeleteSupplier";
 export const SalesManSelect       = "/api/SalesManApp/SelectSalesMan"; 
 
+// ─── Customer Master popups ──────────────────────────────────────────
+export const AreaSelect         = "/api/AreaMasterApp/SelectAreaMaster";
+export const CustomerCardSelect = "/api/CardMasterApp/SelectCardMaster";
+export const BranchSelect       = "/api/loginApp/SelectCompanyBranch";
+
 
        
         export const SalesManInsert = "/api//SalesManApp/InsertSalesMan";
@@ -117,7 +123,7 @@ export const NullToString = (v) => (v == null ? "" : String(v));
 export const buildSession = (pageName) => {
   try {
     const main0       = (getLocal("Mainsetting") || [{}])[0] || {};
-     const com0       = (getLocal("Companysetting") || [{}])[0] || {};
+     // const com0       = (getLocal("Companysetting") || [{}])[0] || {};
     const Comid       = getStr("Comid")    || "1";
     const MComid      = getStr("MComid")   || Comid;
     const IdComList   = getStr("IdComList") || Comid;
@@ -163,7 +169,7 @@ export const api = async (path, body = null, extraHeaders = {}, queryParams = nu
       },
       body: body !== null ? JSON.stringify(body) : undefined,
     });
-    var a=1;
+
 
     // ── standard HTTP error handling ──
     if (res.status === 406) {

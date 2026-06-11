@@ -10,6 +10,7 @@
 //  • Added RateChange API endpoint constants
 //    → RateChangeSelect, RateChangeUpdate, RateChangeItemSelect, RateChangeItemByCode
 // ─────────────────────────────────────────────────────────────────────────────
+/* eslint-disable react-refresh/only-export-components */
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
@@ -127,12 +128,34 @@ export const LoginPasswordUrl     = "/api/LoginApp/EditPassword";
         export const DeleteAccountGroup = "/api/AccountGroupApp/DeleteAccountGroup";
         //UOM
         export const UOMSelect = "/api/UOMApp/SelectUOM";
+        export const SelectUOM = "/api/UOMApp/SelectUOM";
         export const UOMInsert = "/api/UOMApp/InsertUOM";
         export const UOMDelete = "/api/UOMApp/DeleteUOM";
   //Salesman
   export const SalesManSelect = "/api/SalesManApp/SelectSalesMan"; 
   export const SalesManInsert = "/api/SalesManApp/InsertSalesMan";
   export const SalesManDelete = "/api/SalesManApp/DeleteSalesMan";
+
+// ─── Location Master ──────────────────────────────────────────────────────────
+export const LocationSelect = "/api/LocationApp/SelectLocation";
+export const LocationInsert = "/api/LocationApp/InsertLocation";
+export const LocationDelete = "/api/LocationApp/DeleteLocation";
+
+// ─── Rate Change ──────────────────────────────────────────────────────────────
+export const RateChangeItemSelect = "/api/ItemMasterApp/GetProductListV7";
+export const RateChangeItemByCode = "/api/ItemMasterApp/SelectItemMasterbyCodeId";
+export const RateChangeUpdate     = "/api/ItemMasterApp/UpdateRateChange";
+
+// ─── CRM Points ───────────────────────────────────────────────────────────────
+export const CustomerCardSelect = "/api/CardMasterApp/SelectCardMaster";
+export const SelectCRMPoints    = "/api/CRMPointsApp/SelectCRMPoints";
+export const DeleteCRMPoints    = "/api/CRMPointsApp/DeleteCRMPoints";
+export const InsertCRMPoints    = "/api/CRMPointsApp/InsertCRMPoints";
+
+// ─── Sub Category ─────────────────────────────────────────────────────────────
+export const SubCategoryDelete = "/api/CategoryApp/DeleteSubCategory";
+export const SubCategoryInsert = "/api/CategoryApp/InsertSubCategory";
+export const SelectDepartment  = "/api/DepartmentApp/SelectDepartment";
  
 
           // ─── Supplier Master API Links ────────────────────────────────────────────────

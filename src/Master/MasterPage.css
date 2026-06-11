@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* ═══════════════════════════════════════════════════
    MASTER PAGE — CSS VARIABLES (Color Palette)
    All colors are defined here. Change once, applies everywhere.
@@ -111,7 +113,6 @@
 /* ═══════════════════════════════════════════════════
    RESETS & BASE
    ═══════════════════════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;

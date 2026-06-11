@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* ═══════════════════════════════════════════════════════════════════════════
    PurchaseReturn.css  —  Matches PurchasesMaster.css design language exactly
    Color system:
@@ -15,9 +17,7 @@
      Red            : #dc2626 / #dc3545
    ═══════════════════════════════════════════════════════════════════════════ */
 
-   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-   /* ── CSS Variables ────────────────────────────────────────────────────────── */
+/* ── CSS Variables ────────────────────────────────────────────────────────── */
    :root {
      --pr-blue:       #1f65de;
      --pr-blue-dark:  #1750b0;

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Suppliermaster.css";
+import "./SupplierMaster.css";
 import Topbar from "../components/Topbar";
 import * as CC from "../Master/Common"; // ← same Common.jsx
 

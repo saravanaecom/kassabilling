@@ -92,6 +92,14 @@ const mkProxy = (strip, controller) => ({
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'IMPORT_IS_UNDEFINED') return;
+        warn(warning);
+      }
+    }
+  },
   server: {
     proxy: {
 //       // ── Auth ─────────────────────────────────────────────────────────────

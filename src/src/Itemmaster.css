@@ -1,0 +1,433 @@
+/* ═══════════════════════════════════════════════════════════════
+   MISSING CLASSES — append to Itemmaster.css
+   All mp-* classes used in ItemMaster.jsx but not in Itemmaster.css
+   Full-width table fix included
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Full width table fix ─────────────────────────────────────── */
+.mp-gscroll {
+  flex: 1;
+  overflow: auto;          /* only this scrolls */
+  min-height: 0;
+  cursor: grab;
+  user-select: none;
+  width: 100%;
+}
+.mp-gscroll:active { cursor: grabbing; }
+
+.mp-tbl {
+  width: 100% !important;
+  min-width: 100% !important;
+  table-layout: auto !important;
+  border-collapse: collapse;
+}
+
+/* Override the fixed totW inline style — make headers/cells stretch */
+.mp-tbl th,
+.mp-tbl td {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Overlay (modal backdrop) ─────────────────────────────────── */
+.mp-ov {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 40, 0.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+}
+
+/* ── Modal box ────────────────────────────────────────────────── */
+.mp-modal-box {
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  animation: mpPopIn 0.14s ease;
+}
+@keyframes mpPopIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.mp-modal-hdr {
+  background: #1f65de;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.mp-modal-hdr button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+.mp-modal-hdr button:hover { opacity: 0.75; }
+
+.mp-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.mp-modal-ftr {
+  padding: 10px 14px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  background: #f9fafb;
+}
+
+/* ── Status badges ────────────────────────────────────────────── */
+.mp-badge {
+  background: #1f65de;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.mp-wrap .mp-ibody {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 8px 10px !important;
+  margin: 0 !important;
+}
+.mp-badge-warn {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.mp-verr {
+  background: #fff0f0;
+  border: 1px solid #f5c2c7;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #991b1b;
+  font-weight: 600;
+}
+
+/* ── Pagination buttons ───────────────────────────────────────── */
+.mp-pgbtn {
+  width: 26px;
+  height: 24px;
+  border: 1px solid #c5d8f8;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  color: #1f65de;
+  font-weight: 600;
+  transition: all 0.1s;
+}
+.mp-pgbtn:hover { background: #deeafb; border-color: #1f65de; }
+.mp-pgbtn.on    { background: #1f65de; color: #fff; border-color: #1f65de; }
+
+/* ── Grid scroll wrapper ──────────────────────────────────────── */
+.mp-gscroll {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+  cursor: grab;
+  user-select: none;
+}
+.mp-gscroll:active { cursor: grabbing; }
+
+/* ── Filter row (above column header row) ────────────────────── */
+.mp-filter-row {
+  height: 0;
+  line-height: 0;
+}
+.mp-filter-row th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #eef3fb !important;
+  border: none !important;
+  border-bottom: 1px solid #c5d8f8 !important;
+  padding: 3px !important;
+  height: 28px;
+  box-sizing: border-box;
+}
+.mp-filter-row th:empty {
+  height: 26px;
+  line-height: 0;
+  font-size: 0;
+  border-top: none;
+  border-bottom: none;
+  background: #eef3fb !important;
+}
+/* Column header row sits below filter row */
+tfoot tr td {
+  background: #93C5FD !important;
+  
+}
+
+/* Edit mode row — blue tint highlight */
+.mp-tbl tbody tr.editing {
+  background: #dbeafe !important;
+}
+.mp-tbl tbody tr.editing td {
+  background: #dbeafe !important;
+}
+.mp-filter-row th:not(:has(input)) {
+  padding: 0 !important;
+  border: none !important;
+  background: #eef3fb !important;
+}
+/* Column filter input inside filter row */
+.mp-col-filter {
+  width: 100%;
+  height: 22px;
+  border: 1px solid #a8c8f5;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10px;
+  color: #1a2e4a;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  display: block;
+}
+.mp-col-filter:focus {
+  border-color: #1f65de;
+  box-shadow: 0 0 0 2px rgba(31,101,222,0.18);
+}
+.mp-col-filter::placeholder {
+  color: #b0bbd4;
+  font-size: 9.5px;
+  font-style: italic;
+}
+
+/* ── Entry row (tfoot) ────────────────────────────────────────── */
+tfoot tr {
+  background: #f0f6ff;
+}
+
+.mp-entry-sno {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #1f65de;
+  background: #deeafb;
+  border: 1px solid #c5d8f8;
+  padding: 3px 5px;
+  white-space: nowrap;
+}
+
+.mp-entry-actions {
+  text-align: center;
+  padding: 2px 4px;
+  border: 1px solid #c5d8f8;
+}
+
+.mp-entry-save {
+  width: 26px;
+  height: 24px;
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+}
+.mp-entry-save:hover { background: #16a34a; }
+
+.mp-entry-clear {
+  width: 26px;
+  height: 24px;
+  background: #f87171;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+}
+.mp-entry-clear:hover { background: #dc2626; }
+
+.mp-entry-hint {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.3px;
+}
+
+/* ── Combo dropdown popup items ───────────────────────────────── */
+.mp-dd-empty {
+  padding: 18px 14px;
+  text-align: center;
+  color: #b0bbd4;
+  font-size: 11px;
+}
+
+.mp-dd-item {
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f2f8;
+  color: #1a2e4a;
+  transition: background 0.07s;
+}
+.mp-dd-item:hover,
+.mp-dd-item.hi {
+  background: #deeafb;
+  color: #1f65de;
+  font-weight: 600;
+}
+
+.mp-dd-create {
+  padding: 8px 14px;
+  font-size: 11px;
+  color: #1f65de;
+  cursor: pointer;
+  border-top: 2px solid #deeafb;
+  font-weight: 700;
+  background: #f5f9ff;
+  transition: background 0.1s;
+}
+.mp-dd-create:hover { background: #deeafb; }
+
+/* ── Universal table inside modals (mp-utbl) ──────────────────── */
+.mp-utbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.mp-utbl th {
+  background: #1f65de;
+  color: #fff;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+}
+.mp-utbl td {
+  border: 1px solid #eaecf4;
+  padding: 3px 5px;
+}
+.mp-utbl input,
+.mp-utbl select {
+  border: 1px solid #c5d8f8;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 11px;
+  width: 100%;
+  height: 24px;
+  outline: none;
+}
+.mp-utbl input:focus,
+.mp-utbl select:focus { border-color: #1f65de; }
+/* ── FIX 1: Modified row highlight — blue left border + yellow background ── */
+.gtbl tbody tr.mod {
+  background: #fffbeb !important;
+}
+.gtbl tbody tr.mod td {
+  border-bottom: 1px solid #fde68a !important;
+}
+.gtbl tbody tr.mod td:first-child {
+  border-left: 3px solid #1f65de !important;
+}
+
+/* ── FIX 2: Filter row — visible borders and background ─────────────────── */
+.gtbl thead tr:first-child th {
+  background: #eef3fb !important;
+  border: 1px solid #c5d8f8 !important;
+  border-bottom: 2px solid #1f65de !important;
+  padding: 4px 3px !important;
+}
+
+.mp-col-filter,
+.grid-col-filter {
+  width: 100%;
+  height: 24px;
+  border: 1px solid #a8c8f5 !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 11px;
+  color: #1a2e4a;
+  background: #fff !important;
+  outline: none;
+  box-sizing: border-box;
+}
+.mp-col-filter:focus,
+.grid-col-filter:focus {
+  border-color: #1f65de !important;
+  box-shadow: 0 0 0 2px rgba(31,101,222,.18) !important;
+}
+
+/* ── FIX 3: Increase row height and font size ───────────────────────────── */
+.gtbl tbody tr {
+  height: 34px !important;
+}
+.gtbl td {
+  height: 34px !important;
+  padding: 4px 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  vertical-align: middle !important;
+  border: 1px solid #dde6f5 !important;
+}
+.gtbl td input,
+.gtbl td select {
+  height: 28px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 3px 6px !important;
+  color: #1a2e4a !important;
+}
+
+/* ── FIX 4: Column header row — clear separation from filter row ────────── */
+.gtbl thead tr:last-child th {
+  background: #1f65de !important;
+  color: #fff !important;
+  border: 1px solid #1750b0 !important;
+  padding: 7px 8px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  height: 34px !important;
+}
+
+/* ── FIX 5: Selected row — strong blue highlight ────────────────────────── */
+.gtbl tbody tr.sel td {
+  background: #deeafb !important;
+}
+
+/* ── FIX 6: Hover row ───────────────────────────────────────────────────── */
+.gtbl tbody tr:hover td {
+  background: #f0f6ff !important;
+}
+.gtbl tbody tr.sel:hover td {
+  background: #deeafb !important;
+}
